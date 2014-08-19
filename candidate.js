@@ -56,7 +56,7 @@ var partValidation = [
 **/
 module.exports = function(data) {
   var errors = [];
-  var candidate = data && data.candidate;
+  var candidate = data && (data.candidate || data);
   var prefixMatch = candidate && rePrefix.exec(candidate);
   var parts = prefixMatch && candidate.slice(prefixMatch[0].length).split(/\s/);
 
