@@ -1,3 +1,4 @@
+var debug = require('cog/logger')('rtc-validator');
 var rePrefix = /^(?:a=)?candidate:/;
 var reIP = /^(\d+\.){3}\d+$/;
 
@@ -31,14 +32,14 @@ http://tools.ietf.org/html/draft-ietf-mmusic-ice-sip-sdp-03#section-8.1
    ice-char              = ALPHA / DIGIT / "+" / "/"
 */
 var partValidation = [
-  [ /.+/, 'invalid foundation component' ],
-  [ /\d+/, 'invalid component id' ],
-  [ /(UDP|TCP)/i, 'transport must be TCP or UDP' ],
-  [ /\d+/, 'numeric priority expected' ],
-  [ reIP, 'invalid connection address' ],
-  [ /\d+/, 'invalid connection port' ],
-  [ /typ/, 'Expected "typ" identifier' ],
-  [ /.+/, 'Invalid candidate type specified' ]
+  [ /.+/, 'invalid foundation component', 'foundation' ],
+  [ /\d+/, 'invalid component id', 'component-id' ],
+  [ /(UDP|TCP)/i, 'transport must be TCP or UDP', 'transport' ],
+  [ /\d+/, 'numeric priority expected', 'priority' ],
+  [ reIP, 'invalid connection address', 'connection-address' ],
+  [ /\d+/, 'invalid connection port', 'connection-port' ],
+  [ /typ/, 'Expected "typ" identifier', 'type classifier' ],
+  [ /.+/, 'Invalid candidate type specified', 'candidate-type' ]
 ];
 
 /**
@@ -78,6 +79,7 @@ function validateParts(part, idx) {
   var validator = partValidation[idx];
 
   if (validator && (! validator[0].test(part))) {
+    debug(validator[2] + ' part failed validation: ' + part);
     return new Error(validator[1]);
   }
 }

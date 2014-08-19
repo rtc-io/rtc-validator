@@ -28,5 +28,8 @@
   },
   "testling": {
     "files": "test/all.js"
+  },
+  "dependencies": {
+    "cog": "^1.0.0"
   }
 }
