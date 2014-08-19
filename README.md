@@ -39,6 +39,11 @@ errors were returned.
 Validate that an `RTCIceCandidate` (or plain old object with data, sdpMid,
 etc attributes) is a valid ice candidate.
 
+Specs reviewed as part of the validation implementation:
+
+- <http://tools.ietf.org/html/draft-ietf-mmusic-ice-sip-sdp-03#section-8.1>
+- <http://tools.ietf.org/html/rfc5245>
+
 ## License(s)
 
 ### Apache 2.0
