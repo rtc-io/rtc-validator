@@ -3,7 +3,9 @@ var validate = require('../candidate');
 
 var validCandidates = [
   { mid: 'data', candidate: 'a=candidate:2441410931 1 udp 2121670399 172.17.42.1 40992 typ host generation 0' },
-  'a=candidate:2441410931 1 udp 2121670399 172.17.42.1 40992 typ host generation 0'
+  'a=candidate:2441410931 1 udp 2121670399 172.17.42.1 40992 typ host generation 0',
+  { sdpMLineIndex:1,sdpMid:'video',candidate:'a=candidate:1399850381 1 udp 1685790463 203.143.175.67 35373 typ srflx raddr 10.17.128.182 rport 50510 generation 0\r\n' },
+  'a=candidate:1399850381 1 udp 1685790463 203.143.175.67 35373 typ srflx raddr 10.17.128.182 rport 50510 generation 0'
 ];
 var invalidCandidates = [
   { mid: 'data', candidate: 'a=candidate:2365396244 1 udp 1853300479 10.17.131.21 59229 typ  raddr 172.17.42.1 rport 59229 generation 0' },
