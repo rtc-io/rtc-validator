@@ -1,6 +1,6 @@
 var debug = require('cog/logger')('rtc-validator');
 var rePrefix = /^(?:a=)?candidate:/;
-var reIP = /^(\d+\.){3}\d+$/;
+var reIP = /^((\d+\.){3}\d+|([a-fA-F0-9]+\:){7}[a-fA-F0-9]+)$/;
 
 /*
 
