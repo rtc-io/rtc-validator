@@ -1,6 +1,5 @@
 var debug = require('cog/logger')('rtc-validator');
 var rePrefix = /^(?:a=)?candidate:/;
-var reIP = /^((\d+\.){3}\d+|([a-fA-F0-9]+\:){7}[a-fA-F0-9]+)$/;
 
 /*
 
@@ -36,7 +35,7 @@ var partValidation = [
   [ /\d+/, 'invalid component id', 'component-id' ],
   [ /(UDP|TCP)/i, 'transport must be TCP or UDP', 'transport' ],
   [ /\d+/, 'numeric priority expected', 'priority' ],
-  [ reIP, 'invalid connection address', 'connection-address' ],
+  [ require('reu/ip'), 'invalid connection address', 'connection-address' ],
   [ /\d+/, 'invalid connection port', 'connection-port' ],
   [ /typ/, 'Expected "typ" identifier', 'type classifier' ],
   [ /.+/, 'Invalid candidate type specified', 'candidate-type' ]
