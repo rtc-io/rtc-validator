@@ -30,6 +30,7 @@
     "files": "test/all.js"
   },
   "dependencies": {
-    "cog": "^1.0.0"
+    "cog": "^1.0.0",
+    "reu": "^1.1.0"
   }
 }
