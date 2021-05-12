@@ -8,6 +8,7 @@ var validCandidates = [
   'a=candidate:1399850381 1 udp 1685790463 203.143.175.67 35373 typ srflx raddr 10.17.128.182 rport 50510 generation 0',
   'a=candidate:1984741261 1 udp 2122262783 2402:1800:f:6111:b6b6:76ff:fe2a:a8a5 54217 typ host generation 0',
   'a=candidate:1984741261 1 udp 2122262783 2001::9d38:6abd:3806:b1c:7d3d:308b 54217 typ host generation 0',
+  'a=candidate:329132284 1 udp 2113937151 874b9c22-4e16-4a36-ab2a-eff523fd0114.local 53350 typ host generation 0'
 ];
 var invalidCandidates = [
   { mid: 'data', candidate: 'a=candidate:2365396244 1 udp 1853300479 10.17.131.21 59229 typ  raddr 172.17.42.1 rport 59229 generation 0' },

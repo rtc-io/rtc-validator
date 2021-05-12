@@ -4,7 +4,7 @@
   "description": "Validation routines for WebRTC",
   "main": "index.js",
   "scripts": {
-    "test": "node test/all.js && testling -x ./.travis/start-$BROWSER.sh",
+    "test": "browserify test/all.js | broth start | tap-spec",
     "gendocs": "gendocs > README.md"
   },
   "repository": {
@@ -23,8 +23,12 @@
   },
   "homepage": "https://github.com/rtc-io/rtc-validator",
   "devDependencies": {
+    "broth": "^2.1.1",
+    "browserify": "^11.0.0",
+    "tap-spec": "^4.0.2",
     "tape": "^2.14.0",
-    "testling": "^1.7.0"
+    "testling": "^1.7.0",
+    "travis-multirunner": "^4.6.0"
   },
   "testling": {
     "files": "test/all.js"
