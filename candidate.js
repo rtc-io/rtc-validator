@@ -35,7 +35,7 @@ var partValidation = [
   [ /\d+/, 'invalid component id', 'component-id' ],
   [ /(UDP|TCP)/i, 'transport must be TCP or UDP', 'transport' ],
   [ /\d+/, 'numeric priority expected', 'priority' ],
-  [ require('reu/ip'), 'invalid connection address', 'connection-address' ],
+  [ new RegExp(require('reu/ip').source + '|.*\.local$'), 'invalid connection address', 'connection-address' ],
   [ /\d+/, 'invalid connection port', 'connection-port' ],
   [ /typ/, 'Expected "typ" identifier', 'type classifier' ],
   [ /.+/, 'Invalid candidate type specified', 'candidate-type' ]
